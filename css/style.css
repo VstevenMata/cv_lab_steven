@@ -329,6 +329,12 @@ main {
 }
  
 
+
+hr {
+    width: 90%;
+  border: 15px ridge rgba(124, 58, 237, 0.4);
+  }
+
 .main_medio {
   display: flex;
   flex-direction: column;
@@ -357,6 +363,7 @@ main {
     border: 4px outset #0f0f0f;
  list-style: none;
  padding-left: 0;
+ 
 }
 
 .descripcion_experiencia {
@@ -408,6 +415,7 @@ main {
   gap: 20px;
   justify-content: center;
 border:15px groove #0f0f0f;
+margin-top: 100px;
 }
 
 .contenedor_habilidades {
@@ -450,6 +458,24 @@ max-width:300px;
 }
 
 
+.contenedor_habilidades:hover {
+    background: radial-gradient(
+    circle,
+    rgba(93, 17, 107, 0.9),
+    rgba(17, 65, 141, 0.9)
+    
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transform: scale(1.05);
+  transition: ease 0.6s;
+  border: 10px outset rgba(55, 12, 157, 0.9);
+  box-shadow: rgba(48, 13, 173, 0.4) 5px 5px, rgba(48, 5, 128, 0.3) 10px 10px, rgba(119, 26, 241, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
 .habilidades{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -488,6 +514,7 @@ max-width:300px;
   -webkit-text-fill-color: transparent;
 
   transform: scale(1.05);
-  transition: ease 0.4s;
+  transition: ease 0.6s;
+   border: 5px outset rgba(93, 17, 107, 0.9);
 }
 /**Main**/
