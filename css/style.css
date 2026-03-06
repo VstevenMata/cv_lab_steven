@@ -1,13 +1,104 @@
 /**Parte de arriba de la web**/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #0f0f0f;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
   margin: 0;
   width: 100%;
   box-sizing: border-box;
+  padding-top: 92px;
+}
+
+.barra_superior {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-bottom: 4px outset rgba(55, 12, 157, 0.9);
+  background: linear-gradient(100deg, rgba(22, 2, 35, 0.95), rgba(4, 4, 20, 0.95));
+  backdrop-filter: blur(8px);
+}
+
+.marca_barra {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.marca_barra > img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(124, 58, 237, 0.7);
+  object-fit: cover;
+}
+
+.marca_barra > span {
+  font-family: "Arial", sans-serif;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.8), rgba(124, 58, 237, 0.8));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.menu_barra {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu_barra > a {
+  text-decoration: none;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.8), rgba(124, 58, 237, 0.8));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid rgba(124, 58, 237, 0.35);
+  border-radius: 999px;
+  padding: 6px 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.menu_barra > a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 58, 237, 0.85);
+}
+
+.github_barra {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  border: 2px solid rgba(124, 58, 237, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.github_barra:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
 }
 
 header {
@@ -118,6 +209,7 @@ padding-bottom: 15px;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  text-decoration: none;
 
   transition: 0.35s ease;
 
@@ -330,10 +422,6 @@ main {
  
 
 
-hr {
-    width: 90%;
-  border: 15px ridge rgba(124, 58, 237, 0.4);
-  }
 
 .main_medio {
   display: flex;
@@ -739,7 +827,7 @@ max-width:300px;
 
 .linea_animada_horizontal {
   position: relative;
-  width: 1450px;   
+  width: 1100px;   
   height: 4px;     
   margin: 40px auto;
 
@@ -794,4 +882,440 @@ max-width:300px;
     box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.6);
   }
 }
+
+
+
+
+
 /**Main**/
+
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .main_abajo {
+    grid-template-columns: auto auto;
+    border: 10px groove #0f0f0f;
+  }
+
+  .experiencia_profesional {
+    grid-template-columns: 1fr;
+    margin: 30px;
+    padding: 30px;
+  }
+
+  .linea_animada {
+    display: none;
+  }
+
+  .linea_animada_horizontal {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .barra_superior {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .menu_barra {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .main_arriba {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .carousel {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+  }
+
+  .experiencia {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main_abajo {
+    grid-template-columns: auto auto;
+  }
+
+  .contenedor_habilidades {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 280px;
+    max-height: 280px;
+  }
+
+  .contenedor_habilidades > h1 {
+    font-size: 26px;
+  }
+
+  .habilidad {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    height: auto;
+    padding-top: 132px;
+  }
+
+  .barra_superior {
+    border-bottom-width: 3px;
+  }
+
+  .marca_barra > img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .marca_barra > span {
+    font-size: 16px;
+  }
+
+  .menu_barra > a {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .github_barra {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  .header {
+    padding-top: 30px;
+  }
+
+  .contenedor_foto_perfil {
+    width: 250px;
+    height: 250px;
+  }
+
+  .nombre {
+    font-size: 35px;
+    margin-top: 30px;
+  }
+
+  .profesion {
+    font-size: 24px;
+  }
+
+  .descripcion {
+    font-size: 16px;
+    max-width: 90%;
+    padding: 0 20px;
+  }
+
+  .tres_btn {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .contenedor_info_btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    border: 3px outset #0f0f0f;
+  }
+
+  main {
+    padding: 30px 20px;
+  }
+
+  .titulo {
+    font-size: 32px;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 350px;
+  }
+
+  .experiencia {
+    grid-template-columns: 1fr;
+    border: 3px outset #0f0f0f;
+  }
+
+  .descripcion_experiencia {
+    max-width: 100%;
+    font-size: 18px;
+  }
+
+  .linea_animada_horizontal {
+    width: 90%;
+    height: 3px;
+  }
+
+  .main_abajo {
+    grid-template-columns: 1fr;
+    border: 8px groove #0f0f0f;
+    margin-top: 50px;
+    gap: 15px;
+  }
+
+  .contenedor_habilidades {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    max-height: none;
+    border: 6px inset rgba(124, 58, 237, 0.4);
+  }
+
+  .contenedor_habilidades:hover {
+    border: 6px outset rgba(55, 12, 157, 0.9);
+  }
+
+  .habilidades {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .habilidad {
+    border: 3px groove #0f0f0f;
+    font-size: 13px;
+  }
+
+  .habilidad:hover {
+    border: 3px outset rgba(93, 17, 107, 0.9);
+  }
+
+  .titulo_experiencia {
+    font-size: 32px;
+    margin-top: 80px;
+  }
+
+  .experiencia_profesional {
+    grid-template-columns: 1fr;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .contenedor_experiencia_profesional {
+    max-width: 100%;
+    margin: 20px 0;
+    border: 6px inset rgba(124, 58, 237, 0.4);
+  }
+
+  .contenedor_experiencia_profesional:hover {
+    border: 6px outset rgba(55, 12, 157, 0.9);
+  }
+
+  .header_experiencia > svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .que_hacia {
+    font-size: 20px;
+  }
+
+  .empresa_experiencia {
+    font-size: 16px;
+  }
+
+  .periodo_experiencia {
+    font-size: 14px;
+  }
+
+  .descripcion_experiencia_profesional {
+    font-size: 14px;
+  }
+
+  .habilidad_experiencia {
+    font-size: 13px;
+    padding: 8px;
+    border: 3px groove #0f0f0f;
+  }
+
+  .habilidad_experiencia:hover {
+    border: 3px outset rgba(93, 17, 107, 0.9);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding-top: 168px;
+  }
+
+  .marca_barra > span {
+    font-size: 14px;
+  }
+
+  .menu_barra {
+    gap: 8px;
+  }
+
+  .menu_barra > a {
+    font-size: 12px;
+  }
+
+  .github_barra {
+    font-size: 12px;
+  }
+
+  .contenedor_foto_perfil {
+    width: 200px;
+    height: 200px;
+    padding: 4px;
+  }
+
+  .nombre {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .profesion {
+    font-size: 20px;
+  }
+
+  .descripcion {
+    font-size: 14px;
+  }
+
+  .contenedor_info_btn > p {
+    font-size: 13px;
+  }
+
+  .contenedor_info_btn > svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+
+  .titulo {
+    font-size: 28px;
+  }
+
+  .carousel {
+    height: 300px;
+    border: 3px dashed rgba(17, 65, 141, 0.9);
+  }
+
+  .descripcion_experiencia {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .linea_animada_horizontal {
+    width: 95%;
+    height: 2px;
+  }
+
+  .main_abajo {
+    border: 5px groove #0f0f0f;
+    margin-top: 30px;
+  }
+
+  .contenedor_habilidades {
+    border: 5px inset rgba(124, 58, 237, 0.4);
+    padding: 15px;
+  }
+
+  .contenedor_habilidades:hover {
+    border: 5px outset rgba(55, 12, 157, 0.9);
+  }
+
+  .contenedor_habilidades > h1 {
+    font-size: 24px;
+  }
+
+  .contenedor_habilidades > h1 > svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .habilidades {
+    grid-template-columns: 1fr;
+  }
+
+  .habilidad {
+    font-size: 12px;
+    border: 2px groove #0f0f0f;
+  }
+
+  .habilidad:hover {
+    border: 2px outset rgba(93, 17, 107, 0.9);
+  }
+
+  .titulo_experiencia {
+    font-size: 28px;
+    margin-top: 50px;
+  }
+
+  .experiencia_profesional {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .contenedor_experiencia_profesional {
+    border: 5px inset rgba(124, 58, 237, 0.4);
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .contenedor_experiencia_profesional:hover {
+    border: 5px outset rgba(55, 12, 157, 0.9);
+  }
+
+  .header_experiencia {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .header_experiencia > svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .titulo_experiencia_texto {
+    text-align: center;
+  }
+
+  .que_hacia {
+    font-size: 18px;
+  }
+
+  .empresa_experiencia {
+    font-size: 14px;
+  }
+
+  .periodo_experiencia {
+    font-size: 13px;
+  }
+
+  .descripcion_experiencia_profesional {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .habilidades_experiencia {
+    justify-content: center;
+  }
+
+  .habilidad_experiencia {
+    font-size: 12px;
+    padding: 6px;
+    border: 2px groove #0f0f0f;
+  }
+
+  .habilidad_experiencia:hover {
+    border: 2px outset rgba(93, 17, 107, 0.9);
+  }
+}
